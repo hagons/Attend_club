@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <%- include('layout/head') -%>
+        <title>전체 리스트</title>
+    </head>
+    <body class="sort">
+
+        <div class="background">
+          <% if(name=='undefined'){var tmp=''}else{var tmp=name} %>
+            <div class="sort_title">
+              <a href="/sort<%= '/'+tmp %>/excel">리스트</a>
+            </div>
+            <div class="sort_list">
+              <ul class="sort_filter">
+                <li class="current"><input type="text" id="name" value=""><span>월</span></li>
+                <li><button type="button" id="target1">월별참석율</button></li>
+                <li><button type="button" id="target5">누적시간</button></li>
+                <li><button type="button" id="target2">시간기록</button></li>
+                <li><button type="button" id="target3">금일미출석자</button></li>
+                <% if( excel=='excel' ){ %>
+                <li><button type="button" id="target4">엑셀다운로드</button></li>
+                <% } %>
+              </ul>
+              <div id="view_list_div_1" class="r_cell"></div>
+              <div id="view_list_div_2" class="r_cell" style="display:none">
+                <div class=""></div>
+                <h6>* <span style="color:red;">빨간색</span>은 수정됨을 표현</br>* 시간 역순으로 출력됨.</h6>
+              </div>
+              <div id="view_list_div_3" class="r_cell" style="display:none"></div>
+              <div id="view_list_div_5" class="r_cell" style="display:none"></div>
+            </div>
+            <div class="sort_btn">
+              <button type="button" name="button" onclick="$(location).attr('href','/<%= tmp %>');">로그인하기</button>
+            </div>
+        </div>
+
+      <%- include('layout/jquery_backstretch') -%>
+      <script type="text/javascript">
+      $(function(){
+        function view_page(num){
+          var cur_month = $(".current input").val();
+          if(num==2){
+            $.post("/row_data",{cur_month:cur_month},function(rows){
+              $("#view_list_div_2 div").html(rows);
+            });
+          }else if(num==3){
+            $.post( "/not_today", function( rows ) {
+              $("#view_list_div_3").html( rows);
+            });
+          }else if(num==4){
+            $.post("/excel",{cur_month:cur_month},function(rows){
+              // if( !rows.indexOf('이전') ){
+              //   alert(rows);
+              // }else{
+                $(location).attr('href',rows);
+              // }
+            });
+          }else if(num==5){
+            $.post("/add_full_time",{cur_month:cur_month},function(rows){
+              $("#view_list_div_5").html( rows);
+            });
+          }else{
+            $.post("/graph",{cur_month:cur_month},function(rows){
+              $("#view_list_div_1").html(rows).promise().done(function(){
+                for(var i=0;i<$('.gBar').length;i++){
+                  var gBar = $('.gBar').eq(i).css('width');
+                  $(".gBar").eq(i).css('width','0px').animate({ width:gBar },800);
+                }
+              });
+            });
+          }
+        };
+        function pann_open(num){
+          var pann_open = '#view_list_div_'+num;
+          $('.r_cell').css('display','none');
+          if(num==2){
+            $(pann_open).css('display','block');
+          }else if(num==3){
+            $(pann_open).css('display','block');
+          }else if(num==5){
+            $(pann_open).css('display','block');
+          }else{
+            $(pann_open).css('display','block');
+          }
+        };
+        $(".current input").val( new Date().getMonth() + 1 )
+        view_page(1);
+        $( "#target1" ).click(function() {
+          view_page(1);
+          pann_open(1);
+        });
+        $( "#target2" ).click(function() {
+          view_page(2);
+          pann_open(2);
+        });
+        $( "#target3" ).click(function() {
+          view_page(3);
+          pann_open(3);
+        });
+        $( "#target4" ).click(function() {
+          if( $(".current input").val() > new Date().getMonth() ){
+            alert('이전 월만 출력할 수 있습니다!')
+          }else{
+            view_page(4);
+          }
+        });
+        $( "#target5" ).click(function() {
+          view_page(5);
+          pann_open(5);
+        });
+        $("#name").keypress(function(e){
+          if(e.which==13){
+             $("#target1").click();
+          };
+        });
+      });
+      </script>
+    </body>
+</html>

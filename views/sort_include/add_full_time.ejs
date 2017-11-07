@@ -1,0 +1,22 @@
+<%
+for(var i = 0; i < rows.length; i++) {
+  var value = rows[i].sum;
+  if(value==0){
+    print = '퇴근 안 찍음';
+    p_class = 'err';
+  }else{
+    print_day=Math.floor( value/60/60/24 );
+    print_hour=Math.floor( (value/60/60)-(print_day*24) );
+    print_min=Math.floor( (value/60)-(print_hour*60)-(print_day*24*60) );
+    print_sec=Math.floor( value-(print_min*60)-(print_hour*60*60)-(print_day*24*60*60) );
+
+    print = '총 '+print_day+'일 '+print_hour+'시간 '+print_min+'분 '+print_sec+'초';
+    p_class = '';
+  }
+%>
+<ul class="add_full_time">
+  <li class="rank"><%= i+1 %>등</li>
+  <li class="name"><%= rows[i].name %></li>
+  <li class="time <%= p_class %>"><%= print %></li>
+</ul>
+<% } %>

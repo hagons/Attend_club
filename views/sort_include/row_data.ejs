@@ -1,0 +1,48 @@
+<table class="row_data_title">
+  <tr>
+    <td rowspan="2" class="name">이름</td>
+    <td class="in">출근시간</td>
+    <td class="out">퇴근시간</td>
+  </tr>
+  <tr>
+    <td>수정사유</td>
+    <td>수정사유</td>
+  </tr>
+</table>
+<%
+for(var i = 0; i < rows.length; i++) {
+  if(rows[i].in_time_edit){
+    in_list=rows[i].in_time_edit;
+    in_class='edit';
+  }else{
+    in_list=rows[i].in_time;
+    in_class='';
+  };
+  in_print_day=in_list.substring(6,8);
+  in_print_time=in_list.substring(8,10)+':'+in_list.substring(10,12)+':'+in_list.substring(12,14);
+  if(rows[i].out_time_edit){
+    out_list=rows[i].out_time_edit;
+    out_class='edit';
+  }else if(rows[i].out_time){
+    out_list=rows[i].out_time;
+    out_class='';
+  }else{
+    out_list='';
+    out_class='empty';
+  };
+  out_print_day=out_list.substring(6,8);
+  out_print_time=out_list.substring(8,10)+':'+out_list.substring(10,12)+':'+out_list.substring(12,14);
+%>
+<table class="row_data_data">
+  <tr>
+    <td class="name" rowspan="2"><%= rows[i].name %></td>
+    <td class="in <%= in_class %>"><%= in_print_day %>일 <%= in_print_time %></td>
+    <td class="out <%= out_class %>"><%= out_print_time %></td>
+  </tr>
+  <tr>
+    <td class="in <%= in_class %>"><%= rows[i].in_co %></td>
+    <td class="<%= out_class %>"><%= rows[i].out_co %></td>
+  </tr>
+</table>
+<hr/>
+<% } %>

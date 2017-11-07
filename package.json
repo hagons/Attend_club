@@ -1,0 +1,33 @@
+{
+  "name": "dslr_pic",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hagons/attend_club.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hagons/attend_club/issues"
+  },
+  "homepage": "https://github.com/hagons/attend_club#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "date-util": "^1.2.1",
+    "ejs": "^2.5.5",
+    "express": "^4.13.4",
+    "express-ipfilter": "0.0.25",
+    "mysql": "^2.12.0",
+    "urlencode": "^1.1.0"
+  },
+  "devDependencies": {
+    "eslint": "^4.10.0",
+    "eslint-plugin-ejs": "0.0.2",
+    "eslint-plugin-html": "^3.2.2"
+  }
+}

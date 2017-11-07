@@ -1,0 +1,338 @@
+body,p,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,table,th,td,form,fieldset,legend,input,textarea,button,select{margin:0;padding:0}
+body,input,textarea,select,button,table{font-family:'verdana','나눔고딕'}
+body{position:relative}
+img,fieldset{border:0;vertical-align:top;line-height:0}
+dl,ul,ol{list-style:none}
+/*em,address{font-style:normal}*/
+a{color:inherit}
+table{border-collapse:collapse}
+/*전체 리셋*/
+/*기본 디자인*/
+.index,
+.login,
+.my,
+.sort{
+    font-size: 4em;
+}
+.background{
+  position:absolute;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+.box{
+  background:white;
+  margin: 2em auto 0;
+  width: 6em;
+  max-width:95%;
+  overflow: hidden;
+}
+.input input{
+  font-size: .6em;
+  width:90%;
+  height: 2.3em;
+  text-align: center;
+  color: #bbb;
+  font-weight: bold;
+}
+.input button{
+  width: 90%;
+  font-size: .5em;
+  padding: .2em 0;
+  background: black;
+  border: none;
+  color: white;
+  letter-spacing: 2em;
+  cursor: pointer;
+}
+.input span{
+  position: relative;
+  left: 1em;
+}
+.sign{
+  font-size: .2em;
+  text-align: right;
+  margin: 1.5em 3em 3em;
+  color: #999;
+}
+.decription{
+  font-size: .32em;
+  margin: 1em auto 0;
+  padding: 0 0 6em;
+  text-align: left;
+  width: 17em;
+  letter-spacing: -.1em;
+}
+.decription span{
+  color: red;
+  font-weight: bold;
+}
+.title{
+  font-size: .7em;
+  padding:.8em 0 .5em;
+  margin: 0 2em 0;
+}
+
+/*로그인 디자인*/
+.login .title h1{
+  color: #999;
+  font-size: 1.1em;
+}
+.login .title h1 span{
+  color: black;
+}
+.login .input{
+  background: #ccc;
+  padding: 0 0 .4em;
+  margin: 0 0 .3em;
+}
+.login .input button{
+  letter-spacing: .5em;
+}
+.login .input button span{
+  left:.2em;
+}
+.login .btn li a{
+  margin: .1em auto 0;
+  display: block;
+  font-size: .5em;
+  background:#555;
+  color: white;
+  width:90%;
+  height:1.8em;
+  line-height: 1.8em;
+  letter-spacing: .5em;
+  text-decoration: none;
+  cursor: pointer;
+}
+.login .btn li a span{
+  position: relative;
+  left: .3em;
+}
+
+/*내 페이지 디자인*/
+.my{
+  text-align: center;
+}
+.my .title{
+  background: white;
+  font-size: .5em;
+  padding: 1em 0;
+  width: 18em;
+  max-width: 95%;
+  margin:0 auto;
+}
+.my .aticle .aticle_input{
+  font-size: .3em;
+  margin: 1em auto 0;
+  width: 30em;
+  max-width: 95%;
+  background: white;
+  padding: 1em 0 2em;
+  text-align: center;
+}
+.my .aticle .aticle_input li{
+    display: inline-block;
+}
+.my .aticle .aticle_input select{
+  width:3em;
+  height: 2em;
+  font-size: .9em;
+}
+.my .aticle .aticle_input .field input{
+  width:7em;
+  height: 1.8em;
+  font-size: .9em;
+}
+.my .aticle .aticle_input .edit_btn{
+  display: inline;
+}
+.my .aticle .aticle_input .edit_btn button{
+  font-size: .8em;
+  padding: .5em 3em;
+  margin: .5em 0 0
+}
+.my .aticle .aticle_input .input_title{
+  background: #ccc;
+  padding: .5em 0;
+  margin: 1em auto;
+  width: 30em;
+  max-width: 90%;
+}
+.my .aticle .btn{
+    font-size: .3em;
+    margin: 1em auto 10em;
+    width: 30em;
+    max-width: 95%;
+    background: white;
+    padding: 1.5em 0;
+    text-align: center;
+}
+.my .aticle .btn .btn_list{
+  margin: 0 auto;
+}
+.my .aticle .btn .btn_list a{
+  background:black;
+  color:white;
+  text-decoration: none;
+  width:90%;
+  padding: 1em 0;
+  display: inline-block;
+  text-align: center;
+  margin: .5em auto 0;
+}
+
+/*개발자 디자인*/
+.dev div{
+    font-size: 4em;
+}
+.dev ul li{
+    font-size: 2em;
+}
+
+/*정렬페이지 디자인*/
+.sort .sort_title{
+  background: white;
+  margin: 0 auto .5em;
+  width: 18em;
+  max-width: 95%;
+  padding: 1em 0;
+  font-size: .5em;
+}
+.sort .sort_list{
+  padding:.8em 0;
+  background: white;
+  width:9em;
+  max-width: 95%;
+  margin:0 auto;
+  overflow: hidden;
+}
+.sort .sort_list .sort_filter{
+  margin: 0 .7em;
+  font-size: .45em;
+  text-align: left;
+}
+.sort .sort_list .sort_filter li{
+    display: inline-block;
+    font-size: .55em;
+}
+.sort .sort_list .sort_filter li button{
+  font-size: 1em;
+  margin: 0 0 1em;
+  padding: .5em;
+}
+.sort .sort_list .sort_filter .current{
+  margin: 0 .5em 0 0;
+}
+.sort .sort_list .sort_filter .current input{
+  font-size: 1.4em;
+  width: 1.3em;
+  padding: .2em;
+  text-align: center;
+}
+.sort .sort_list .r_cell{
+  text-align: left;
+  font-size: .3em;
+  width: 88%;
+  max-width: 88%;
+  margin: 0 auto;
+}
+.sort .sort_btn{
+  width:9em;
+  max-width: 95%;
+  margin:0 auto;
+  padding: 0 0 3em;
+}
+.sort .sort_btn button{
+  background: black;
+  color: white;
+  width: 100%;
+  padding: .8em 0;
+  font-size: .5em;
+  text-align: center;
+  margin: .3em auto 0;
+  border: none;
+  cursor: pointer;
+}
+
+/*그래프 모듈 디자인*/
+.hGraph{
+  position: relative;left: 1.5em;
+}
+.hGraph ul{ margin:0 3em 0 3em; padding:.1em 0 0 0; border:.1em solid #ccc; border-top:0; border-right:0; font-size:.6em; font-family:Tahoma, Geneva, sans-serif; list-style:none;}
+.hGraph li{ position:relative; margin:.8em 0; white-space:nowrap; vertical-align:top;}
+.hGraph .gTerm{ position:absolute; width:3em; top:0; left:-5.5em; line-height:2em; text-align:right; color:#767676; font-weight:bold;}
+.hGraph .gBar{ position:relative; display:inline-block; height:1.8em; border-left:0; background:limegreen;}
+.hGraph .gBar.red{
+  background-color:red;
+}
+.hGraph .gBar span{ position:absolute; width:3em; line-height:20px; top:0; right:-3.8em; color:#767676;}
+
+/*금일 출석자 디자인*/
+#view_list_div_3 .not_today{
+  display: inline;
+}
+#view_list_div_3 .not_today li{
+  background:#bbb;
+  display: inline-block;
+  padding: .05em;
+  margin: .2em .1em .2em 0;
+}
+
+/*로우 데이타 디자인*/
+#view_list_div_2 h6{
+  margin: 5em 0 0;
+  clear: both;
+}
+#view_list_div_2 .row_data_title{
+  background: #ccc;
+  width: 100%;
+}
+#view_list_div_2 .row_data_title .name{
+  width: 4em;
+  height: 2.7em;
+  text-align: center;
+  line-height: 2.7em;
+}
+#view_list_div_2 .row_data_title .in,
+#view_list_div_2 .row_data_title .out{
+  width: 10.5em;
+}
+#view_list_div_2 .row_data_data{
+  margin: 0 0 .2em;
+}
+#view_list_div_2 .row_data_data .name{
+  width: 4em;
+  height: 2.7em;
+  text-align: center;
+  line-height: 2.7em;
+}
+#view_list_div_2 .row_data_data .in,
+#view_list_div_2 .row_data_data .out{
+  width: 10.5em;
+  overflow: hidden;
+}
+#view_list_div_2 .edit{
+  color:red;
+}
+#view_list_div_2 .empty{
+  display: none;
+}
+
+/*누적시간 디자인*/
+#view_list_div_5 .add_full_time{
+  clear: both;
+}
+#view_list_div_5 .add_full_time li{
+ display: inline-block;
+}
+#view_list_div_5 .add_full_time .name{
+  width:5em;
+}
+#view_list_div_5 .add_full_time .rank{
+  width:3em;
+}
+#view_list_div_5 .add_full_time .time.err{
+  font-size: .8em;
+  color: gray;
+}

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <%- include('layout/head') -%>
+      <title>출결 리스트 - <%= rows[0].name %></title>
+  </head>
+  <body class="my">
+    <div class="title">
+        <span><%= rows[0].name %></span> 고객님, 환영합니다!
+    </div>
+    <div class="aticle">
+
+      <div class="aticle_input">
+        <%
+        var print_in_time=rows[0].in_time;
+        if(rows[0].in_time_edit){print_in_time=rows[0].in_time_edit;};
+        var show=true;
+        if(rows[0].out_time_edit){
+          print_out_time=rows[0].out_time_edit;
+        }else if(rows[0].out_time){
+          print_out_time=rows[0].out_time;
+        }else{
+          print_out_time='';
+          show=false;
+        };
+        var print = [{
+          title:'출근',
+          print_time:print_in_time,
+          show:true,
+          hour:'in_hour',
+          min:'in_min',
+          co:'in_co',
+          print_co:rows[0].in_co
+        },{
+          title:'퇴근',
+          print_time:print_out_time,
+          show:show,
+          hour:'out_hour',
+          min:'out_min',
+          co:'out_co',
+          print_co:rows[0].out_co
+        }];
+        %>
+        <% for(var i=0;i<2;i++){ %>
+        <% if(print[i].show){ %>
+        <form action="/update" method="post">
+          <ul style="display:none">
+            <li><input type="text" name="check_id" value="<%= rows[0].check_id %>"></li>
+            <li><input type="text" name="people_id" value="<%= people_id %>"></li>
+            <li><input type="text" name="name" value="<%= rows[0].name %>"></li>
+            <li><input type="text" name="ymd" value="<%= print[i].print_time.slice(0,8) %>"></li>
+          </ul>
+          <ul class="input_title">
+            <li><%= print[i].title %></li>
+          </ul>
+          <% if(i==0){ %>
+          <ul class="click_night">
+          <% }else{ %>
+          <ul>
+          <% }; %>
+            <li><%= print[i].print_time.slice(4,6); %> 월</li>
+            <li><%= print[i].print_time.slice(6,8); %> 일</li>
+            <li>
+              <select name="<%= print[i].hour %>">
+                <%
+                for(var j=0;j<24;j++){
+                  var tem = '';
+                  if( print[i].print_time.slice(8,10) == j ){var tem = 'selected';}
+                %>
+                <option value="<%= j %>" <%= tem %>><%= j %></option>
+                <% } %>
+              </select> 시
+            </li>
+            <li>
+              <select name="<%= print[i].min %>">
+                <%
+                for(var j=0;j<60;j++){
+                  var tem = '';
+                  if( print[i].print_time.slice(10,12) == j ){var tem = 'selected';}
+                %>
+                <option value="<%= j %>" <%= tem %>><%= j %></option>
+                <% } %>
+              </select> 분
+            </li>
+            <li class="field"><input type="text" name="<%= print[i].co %>" value="<%= print[i].print_co %>" placeholder="사유"></li>
+          </ul>
+          <ul class="edit_btn">
+            <% if(i==0){ %>
+            <% if(print[i].print_time.slice(8,14)=="235959"){var tem='checked'} %>
+            <li><input type="checkbox" name="night" id="night" <%= tem %> ><label for="night">밤샘</label></li>
+            <% } %>
+            <li><button>수정하기</button></li>
+          </ul>
+        </form>
+        <% }} %>
+      </div>
+
+      <div class="btn">
+        <ul class="btn_list">
+          <li><a href="/<%= rows[0].name %>">출결 페이지로 돌아가기</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <%- include('layout/jquery_backstretch') -%>
+    <script type="text/javascript">
+    $(document).ready(function(){
+      var status = '<%= status %>';
+      if(status=='2'){
+        new Audio('/sound/1.mp3').play()
+        // alert('업데이트 되었습니다.');
+      }else if(status=="0"){
+        new Audio('/sound/2.wav').play()
+        // alert('출근하였습니다');
+      }else if(status=="1"){
+        new Audio('/sound/3.wav').play()
+        // alert('퇴근하였습니다');
+      };
+      if( $("select[name=in_hour] option:selected").val()==0 && $("select[name=in_min] option:selected").val()==0 ){
+        show(true);
+      };
+      function show(bul){
+        if($("input:checkbox[id='night']").is(":checked")==true||bul==true){
+          $('.click_night').css("display","none");
+          $("input:checkbox[id='night']").prop("checked", true);
+        }else{
+          $('.click_night').css("display","block");
+        };
+      };
+      $( "#night" ).click(function(){show(false);});
+    });
+    </script>
+  </body>
+</html>

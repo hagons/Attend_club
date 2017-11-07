@@ -1,0 +1,22 @@
+<div class="hGraph">
+  <%
+  var today = new Date();
+  var year = today.getFullYear();
+  var month = today.getMonth();
+  var goal = new Date(year,month,1);
+  var out = Math.ceil((today-goal)/24/60/60/1000);
+  var temp = 0;
+
+  for(var i = 0; i < rows.length; i++){
+    temp=Math.round( rows[i].count/out*100 );
+    if( today > new Date(year,(month),15) && rows[i].count < 15 ){
+      var edit_class = 'red';
+      var msg = ' - 15일 경고!';
+    }else{
+      var edit_class='';
+      var msg='';
+    };
+  %>
+  <ul><li><span class="gTerm"><%= rows[i].name %></span><span class="gBar <%= edit_class %>" style="width:<%= temp %>%"><span><%= rows[i].count %>일<%= msg %></span></span></li></ul>
+  <% } %>
+</div>
