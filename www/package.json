@@ -17,12 +17,12 @@
   },
   "homepage": "https://github.com/hagons/attend_club#readme",
   "dependencies": {
-    "body-parser": "^1.15.2",
+    "body-parser": "^1.19.0",
     "date-util": "^1.2.1",
     "ejs": "^2.5.5",
-    "express": "^4.13.4",
+    "express": "^4.17.1",
     "express-ipfilter": "0.0.25",
-    "mysql": "^2.12.0",
+    "mysql": "^2.17.1",
     "urlencode": "^1.1.0"
   },
   "devDependencies": {
