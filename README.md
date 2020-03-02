@@ -8,6 +8,7 @@ Docker
 
 - eslint
 - nodemon
+- prettier
 
 #### Backend
 
