@@ -7,6 +7,9 @@ services:
       # root
       # 1234
       # attendance
+      # ${TAG}
+    env_file:
+      - ./.env
 
   api:
     image: node

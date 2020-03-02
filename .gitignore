@@ -1,7 +1,6 @@
-routes/db.js
-*.csv
 node_modules
-
+*.env
+*.csv
 *.wav
 *.mp3
 *.jpg
