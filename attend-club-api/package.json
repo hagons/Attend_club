@@ -1,16 +1,17 @@
 {
-  "name": "dslr_pic",
+  "name": "attend-club-api",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "node app"
+    "serve": "nodemon src/app",
+    "start": "node src/app"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/hagons/attend_club.git"
   },
-  "author": "",
+  "author": "hagon <hagons.l@gmail.com> (https://github.com/hagons)",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/hagons/attend_club/issues"
@@ -23,11 +24,20 @@
     "express": "^4.17.1",
     "express-ipfilter": "0.0.25",
     "mysql": "^2.17.1",
+    "typescript": "^3.8.3",
     "urlencode": "^1.1.0"
   },
   "devDependencies": {
-    "eslint": "^4.10.0",
+    "@typescript-eslint/eslint-plugin": "^2.21.0",
+    "@typescript-eslint/parser": "^2.21.0",
+    "eslint": "^6.8.0",
+    "eslint-config-google": "^0.14.0",
     "eslint-plugin-ejs": "0.0.2",
-    "eslint-plugin-html": "^3.2.2"
+    "eslint-plugin-html": "^3.2.2",
+    "eslint-plugin-react": "^7.18.3",
+    "nodemon": "^2.0.2"
+  },
+  "engines": {
+    "node": ">=12.14"
   }
 }

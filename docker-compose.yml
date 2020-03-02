@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  db:
+    image: mysql:12.14
+    environment:
+      # root
+      # 1234
+      # attendance
+
+  api:
+    image: node
+
+  static:
+    image: node

@@ -1,0 +1,25 @@
+{
+  "name": "attend-club-frontend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "serve": "nodemon src/app",
+    "start": "node src/app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hagons/attend_club.git"
+  },
+  "author": "hagon <hagons.l@gmail.com> (https://github.com/hagons)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hagons/attend_club/issues"
+  },
+  "homepage": "https://github.com/hagons/attend_club#readme",
+  "dependencies": {},
+  "devDependencies": {},
+  "engines": {
+    "node": ">=12.14"
+  }
+}
