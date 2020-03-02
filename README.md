@@ -7,7 +7,6 @@ Docker
 ## Environment
 
 - eslint
-- nodemon
 - prettier
 
 #### Backend
