@@ -4,6 +4,24 @@
 
 Docker
 
+## Environment
+
+- eslint
+- nodemon
+
+#### Backend
+
+- typescript
+- react
+- mysql
+- node
+
+#### Frontend
+
+- typescript
+- express
+- node
+
 ## Execute
 
 ```bash
