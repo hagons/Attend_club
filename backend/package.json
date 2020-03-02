@@ -24,6 +24,7 @@
     "ejs": "^2.5.5",
     "express": "^4.17.1",
     "express-ipfilter": "0.0.25",
+    "lodash": "^4.17.15",
     "mysql": "^2.17.1",
     "typescript": "^3.8.3",
     "urlencode": "^1.1.0"
