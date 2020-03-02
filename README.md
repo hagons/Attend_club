@@ -4,7 +4,13 @@
 
 Docker
 
+## Execute
+
+```bash
+docker-compose up
+```
+
 ## Infomation
 
-Issues : https://github.com/hagons/attend_club/issues
+Issues : https://github.com/hagons/attend_club/issues  
 Homepage : https://github.com/hagons/attend_club#readme
