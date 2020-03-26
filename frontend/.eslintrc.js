@@ -2,7 +2,6 @@ module.exports = {
   env: {
     browser: true,
     es6: true,
-    'jest/globals': true,
   },
   extends: ['plugin:react/recommended', 'standard'],
   globals: {
@@ -21,5 +20,6 @@ module.exports = {
   rules: {
     semi: [2, 'always'],
     'space-before-function-paren': [2, 'never'],
+    'arrow-parens': [2, 'as-needed'],
   },
 };
