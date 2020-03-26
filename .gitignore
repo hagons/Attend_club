@@ -1,7 +1,0 @@
-node_modules
-*.env
-*.csv
-*.wav
-*.mp3
-*.jpg
-dist
