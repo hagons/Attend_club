@@ -4,12 +4,12 @@ const Home = <T extends {}>(props: any) => {
   const nameRef = useRef<HTMLInputElement>(null);
   const [userName, setUserName] = useState('');
   const mousePress = (e: React.MouseEvent) => {
-    if (userName === '') alert('이름을 입력하세요!');
+    if (userName === '') return alert('이름을 입력하세요!');
     enterRoom();
   };
   const keywordKeyPress = (e: React.KeyboardEvent) => {
     if (e.key !== 'Enter') return;
-    if (userName === '') return;
+    if (userName === '') return alert('이름을 입력하세요!');
     enterRoom();
   };
   const enterRoom = () => {

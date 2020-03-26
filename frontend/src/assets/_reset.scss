@@ -1,0 +1,62 @@
+body,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol,
+li,
+dl,
+dt,
+dd,
+table,
+th,
+td,
+form,
+fieldset,
+legend,
+input,
+textarea,
+button,
+select {
+  margin: 0;
+  padding: 0
+}
+
+body,
+input,
+textarea,
+select,
+button,
+table {
+  font-family: 'verdana', '나눔고딕'
+}
+
+body {
+  position: relative
+}
+
+img,
+fieldset {
+  border: 0;
+  vertical-align: top;
+  line-height: 0
+}
+
+dl,
+ul,
+ol {
+  list-style: none
+}
+
+/*em,address{font-style:normal}*/
+a {
+  color: inherit
+}
+
+table {
+  border-collapse: collapse
+}

@@ -7,6 +7,8 @@ type Props = {
 };
 
 const DevelopmentNote = ({ history }: Props) => {
+  document.title = '노트';
+
   const backButton = () => {
     history.goBack();
   };
