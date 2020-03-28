@@ -1,10 +1,17 @@
 // @flow
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-type Props = {};
+type Props = {
+  match: { params: { user: String } };
+};
 
-const Login = (props: Props) => {
-  document.title = '로긴';
+const Login = ({
+  match: {
+    params: { user }
+  }
+}: Props) => {
+  document.title = '출석하기';
 
   return (
     <div className="login">
@@ -12,7 +19,7 @@ const Login = (props: Props) => {
         <div className="box">
           <div className="title">
             <h1>
-              <span>name</span>의 <br />
+              <span>{user}</span>의 <br />
               출석하기
               <br />
               사이트
@@ -24,6 +31,7 @@ const Login = (props: Props) => {
               <input type="text" name="people_id" style={{ display: 'none' }} />
               <input type="text" name="name" style={{ display: 'none' }} />
               <input type="text" name="check_id" style={{ display: 'none' }} />
+
               <button id="upload">
                 <span>출근</span>
               </button>
@@ -35,14 +43,14 @@ const Login = (props: Props) => {
 
           <ul className="btn">
             <li>
-              <a href="/my/<%= people_id %>">
+              <Link to={`/mypage/@${user}`}>
                 <span>리스트보기</span>
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/sort/<%= name %>">
+              <Link to="/lists">
                 <span>전체리스트</span>
-              </a>
+              </Link>
             </li>
           </ul>
 
@@ -54,9 +62,6 @@ const Login = (props: Props) => {
         <ul className="decription">
           <li>
             - 현재 사이트를 <span>즐겨찾기</span> 하셔서 사용하세요!
-          </li>
-          <li>
-            <hr />
           </li>
         </ul>
       </div>

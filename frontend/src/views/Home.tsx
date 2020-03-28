@@ -1,6 +1,12 @@
 import React, { useRef, useEffect, useState } from 'react';
 
-const Home = <T extends {}>(props: any) => {
+type HomeProps = {
+  history: {
+    push: Function;
+  };
+};
+
+const Home = ({ history: { push } }: HomeProps) => {
   const nameRef = useRef<HTMLInputElement>(null);
   const [userName, setUserName] = useState('');
   const mousePress = (e: React.MouseEvent) => {
@@ -13,7 +19,7 @@ const Home = <T extends {}>(props: any) => {
     enterRoom();
   };
   const enterRoom = () => {
-    console.log('in');
+    push(`/@${userName}`);
   };
 
   useEffect(() => {
