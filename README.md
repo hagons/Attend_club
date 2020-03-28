@@ -16,15 +16,14 @@ Docker
 #### Backend
 
 - typescript
-- react
+- express
 - mysql
 - node
 
 #### Frontend
 
 - typescript
-- express
-- node
+- react
 
 ## Execute
 
