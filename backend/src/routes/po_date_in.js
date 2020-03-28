@@ -1,7 +1,7 @@
-module.exports = function (app) {
+module.exports = function(app) {
   var route = require('express').Router();
-  var conn = require('../db')();
-  var getTime = require('../../lib/getTime');
+  var conn = require('./db')();
+  var getTime = require('../lib/getTime');
 
   route.post('/insert', (req, res) => {
     var people_id = req.body.people_id;
@@ -10,7 +10,7 @@ module.exports = function (app) {
     var insert = 'insert into po_list (people_id,in_time) value (?, now())';
     var update = 'update po_list set out_time=now() where check_id=?';
     if (check_id) {
-      conn.query(update, check_id, function (err, rows, fields) {
+      conn.query(update, check_id, function(err, rows, fields) {
         if (err) {
           console.log(getTime.Date(), err);
           res.status(500).send('Internal Server Error');
@@ -20,7 +20,7 @@ module.exports = function (app) {
         }
       });
     } else {
-      conn.query(insert, people_id, function (err, rows, fields) {
+      conn.query(insert, people_id, function(err, rows, fields) {
         if (err) {
           console.log(getTime.Date(), err);
           res.status(500).send('Internal Server Error');
@@ -71,13 +71,21 @@ module.exports = function (app) {
     }
 
     if (night == 'on') {
-      var time1 = (ymd - 1) + '235959';
-      var time1_1 = ymd.slice(0, 4) + '-' + ymd.slice(4, 6) + '-' + (Number(ymd.slice(6, 8)) - 1) + '%';
+      var time1 = ymd - 1 + '235959';
+      var time1_1 =
+        ymd.slice(0, 4) +
+        '-' +
+        ymd.slice(4, 6) +
+        '-' +
+        (Number(ymd.slice(6, 8)) - 1) +
+        '%';
       var time2 = ymd + '000001';
-      var sql1 = 'update po_list set out_time_edit=?,out_co="밤샘" where in_time like ? and people_id=?';
-      var sql2 = 'update po_list set in_time_edit=?,in_co="밤샘" where in_time>curdate() and people_id=?';
+      var sql1 =
+        'update po_list set out_time_edit=?,out_co="밤샘" where in_time like ? and people_id=?';
+      var sql2 =
+        'update po_list set in_time_edit=?,in_co="밤샘" where in_time>curdate() and people_id=?';
 
-      conn.query(sql1, [time1, time1_1, people_id], function (err, rows) {
+      conn.query(sql1, [time1, time1_1, people_id], function(err, rows) {
         if (err) {
           console.log(getTime.Date(), err);
           res.status(500).send('Internal Server Error');
@@ -92,7 +100,7 @@ module.exports = function (app) {
           `;
           res.send(err_msg);
         } else {
-          conn.query(sql2, [time2, people_id], function (err) {
+          conn.query(sql2, [time2, people_id], function(err) {
             if (err) {
               console.log(getTime.Date(), err);
               res.status(500).send('Internal Server Error');
@@ -104,7 +112,7 @@ module.exports = function (app) {
         }
       });
     } else {
-      conn.query(sql, [time, co, check_id], function (err, rows, fields) {
+      conn.query(sql, [time, co, check_id], function(err, rows, fields) {
         if (err) {
           console.log(getTime.Date(), err);
           res.status(500).send('Internal Server Error');
@@ -115,7 +123,7 @@ module.exports = function (app) {
       });
     }
   });
-  route.get('/join', function (req, res) {
+  route.get('/join', function(req, res) {
     res.send('가입');
   });
 
