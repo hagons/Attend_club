@@ -1,4 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react';
+import Description from '../components/home/Description';
+import Title from '../components/home/Title';
 
 type HomeProps = { history: { push: Function } };
 
@@ -29,9 +31,8 @@ const Home = ({ history: { push } }: HomeProps) => {
     <div className="index">
       <div className="background">
         <div className="box">
-          <div className="title">
-            <h1>맥출</h1>
-          </div>
+          <Title />
+
           <div className="input">
             <input
               type="text"
@@ -47,19 +48,8 @@ const Home = ({ history: { push } }: HomeProps) => {
               <span>입실</span>
             </button>
           </div>
-          <p className="sign">
-            <a href="/dev">by sangho</a>
-          </p>
-          <ul className="decription">
-            <li>- 불편한 점, 추가하고 싶은 점 알려주기!</li>
-            <li>
-              - 결석일수가 15일 초과할 시 <span>퇴출!</span>
-            </li>
-            <li>
-              - 회비 미납일이 1달을 초과할 시 <span>퇴출!</span>
-            </li>
-            <li>- 작업실 깨끗하게 사용합시다!</li>
-          </ul>
+
+          <Description />
         </div>
       </div>
     </div>

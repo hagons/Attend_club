@@ -7,8 +7,13 @@ const App = () => {
   return (
     <BrowserRouter>
       <Switch>
-        {router.map(r => (
-          <Route path={r.path} component={r.component} exact={r.exact} />
+        {router.map((route, index) => (
+          <Route
+            path={route.path}
+            component={route.component}
+            exact={route.exact}
+            key={index}
+          />
         ))}
       </Switch>
     </BrowserRouter>

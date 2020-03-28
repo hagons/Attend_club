@@ -1,4 +1,3 @@
-import { RouteComponentProps, match } from 'react-router-dom';
 import Home from './views/Home';
 import Login from './views/Login';
 import Mypage from './views/Mypage';
