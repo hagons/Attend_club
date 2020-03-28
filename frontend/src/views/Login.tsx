@@ -2,7 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-type Props = {
+type LoginProps = {
   match: { params: { user: String } };
 };
 
@@ -10,7 +10,7 @@ const Login = ({
   match: {
     params: { user }
   }
-}: Props) => {
+}: LoginProps) => {
   document.title = '출석하기';
 
   return (

@@ -1,6 +1,6 @@
 import React from 'react';
 
-type Props = {
+type MypageProps = {
   match: { params: { user: String } };
 };
 
@@ -8,7 +8,7 @@ const Mypage = ({
   match: {
     params: { user }
   }
-}: Props) => {
+}: MypageProps) => {
   // var status = '= status ';
   //     if(status=='2'){
   //       new Audio('/sound/1.mp3').play()

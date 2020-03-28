@@ -1,23 +1,15 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import Home from './views/Home';
-import DevelopmentNote from './views/DevelopmentNote';
-import './App.scss';
-import Login from './views/Login';
-import Mypage from './views/Mypage';
-import Signup from './views/Signup';
-import Lists from './views/Lists';
+import './assets/App.scss';
+import { router } from './router';
 
 const App = () => {
   return (
     <BrowserRouter>
       <Switch>
-        <Route path="/" component={Home} exact />
-        <Route path="/dev" component={DevelopmentNote} />
-        <Route path="/@:user" component={Login} />
-        <Route path="/mypage/@:user" component={Mypage} />
-        <Route path="/signup" component={Signup} />
-        <Route path="/lists" component={Lists} />
+        {router.map(r => (
+          <Route path={r.path} component={r.component} exact={r.exact} />
+        ))}
       </Switch>
     </BrowserRouter>
   );

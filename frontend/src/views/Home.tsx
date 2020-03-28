@@ -1,10 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react';
 
-type HomeProps = {
-  history: {
-    push: Function;
-  };
-};
+type HomeProps = { history: { push: Function } };
 
 const Home = ({ history: { push } }: HomeProps) => {
   const nameRef = useRef<HTMLInputElement>(null);
