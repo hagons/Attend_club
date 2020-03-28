@@ -2,17 +2,12 @@ version: '3'
 
 services:
   db:
-    image: mysql:12.14
+    image: mysql
     environment:
-      # root
-      # 1234
-      # attendance
-      # ${TAG}
+      MYSQL_ROOT_PASSWORD: root
     env_file:
       - ./db/.env
-
-  api:
-    image: node
-
-  static:
-    image: node
+    restart: always
+    command: --default-authentication-plugin=mysql_native_password
+    ports:
+      - 3306:3306
