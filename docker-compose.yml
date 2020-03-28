@@ -9,7 +9,7 @@ services:
       # attendance
       # ${TAG}
     env_file:
-      - ./.env
+      - ./db/.env
 
   api:
     image: node
