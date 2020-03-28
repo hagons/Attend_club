@@ -1,7 +1,6 @@
 version: '3'
 
 services:
-
   db:
     image: mysql
     environment:
@@ -12,17 +11,20 @@ services:
     command: --default-authentication-plugin=mysql_native_password
     ports:
       - 3306:3306
-
+    volumes:
+      - attend:/var/lib/mysql
   # frontend:
   #   image: node
   #   command: npm run build && npm start
   #   ports:
   #     - 5000:5000
   #   restart: always
-
   # backend:
   #   image: node
   #   command: npm run build && npm start
   #   ports:
   #     - 80:80
   #   restart: always
+
+volumes:
+  attend:
