@@ -14,10 +14,7 @@ app.use(
   })
 );
 
-app.use('/', routes);
-app.use('*', (req, res) => {
-  res.status(400).send('Not Found');
-});
+app.use('*', routes);
 
 app.listen(80, () => {
   console.log(custumDate(), 'Server Start! 80');
