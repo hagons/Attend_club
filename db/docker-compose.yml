@@ -13,16 +13,16 @@ services:
     ports:
       - 3306:3306
 
-  frontend:
-    image: node
-    command: npm run build && npm start
-    ports:
-      - 5000:5000
-    restart: always
+  # frontend:
+  #   image: node
+  #   command: npm run build && npm start
+  #   ports:
+  #     - 5000:5000
+  #   restart: always
 
-  backend:
-    image: node
-    command: npm run build && npm start
-    ports:
-      - 80:80
-    restart: always
+  # backend:
+  #   image: node
+  #   command: npm run build && npm start
+  #   ports:
+  #     - 80:80
+  #   restart: always
