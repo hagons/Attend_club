@@ -1,8 +1,9 @@
-import Home from './views/Home';
 import Login from './views/Login';
+import Dashboard from './views/Dashboard';
 import Mypage from './views/Mypage';
 import Signup from './views/Signup';
 import Lists from './views/Lists';
+import NotFound from './views/NotFound';
 
 export type routerType = Array<{
   path: string;
@@ -13,12 +14,12 @@ export type routerType = Array<{
 export const router: routerType = [
   {
     path: '/',
-    component: Home,
+    component: Login,
     exact: true
   },
   {
     path: '/@:user',
-    component: Login,
+    component: Dashboard,
     exact: false
   },
   {
@@ -35,5 +36,10 @@ export const router: routerType = [
     path: '/lists',
     component: Lists,
     exact: false
+  },
+  {
+    path: '*',
+    component: NotFound,
+    exact: true
   }
 ];

@@ -8,13 +8,6 @@ body,
   background-image: url('./img/b1.jpg');
 }
 
-.index,
-.login,
-.my,
-.sort {
-  font-size: 4em;
-}
-
 .background {
   position: absolute;
   text-align: center;
@@ -24,16 +17,16 @@ body,
 
 .box {
   background: white;
-  margin: 2em auto 0;
-  width: 6em;
+  margin: 20% auto 0;
+  width: 70vw;
   max-width: 95%;
   overflow: hidden;
+  padding: 2rem;
 }
 
 .input input {
-  font-size: .6em;
   width: 90%;
-  height: 2.3em;
+  height: 2.3rem;
   text-align: center;
   color: #bbb;
   font-weight: bold;
@@ -41,34 +34,31 @@ body,
 
 .input button {
   width: 90%;
-  font-size: .5em;
-  padding: .2em 0;
+  padding: 1rem 0;
   background: black;
   border: none;
   color: white;
-  letter-spacing: 2em;
+  letter-spacing: 2rem;
   cursor: pointer;
 }
 
 .input span {
   position: relative;
-  left: 1em;
+  left: 1rem;
 }
 
 .sign {
-  font-size: .2em;
   text-align: right;
-  margin: 1.5em 3em 3em;
+  margin: 1rem;
   color: #999;
 }
 
 .decription {
-  font-size: .32em;
-  margin: 1em auto 0;
-  padding: 0 0 6em;
+  margin: 1rem auto 0;
+  padding: 0 0 2rem;
   text-align: left;
-  width: 17em;
-  letter-spacing: -.1em;
+  width: 17rem;
+  letter-spacing: -0.1rem;
 }
 
 .decription span {
@@ -77,52 +67,43 @@ body,
 }
 
 .title {
-  font-size: .7em;
-  padding: .8em 0 .5em;
-  margin: 0 2em 0;
+  padding: 0.8rem 0 0.5rem;
+  margin: 0 2rem 0;
 }
 
 /*로그인 디자인*/
 .login .title h1 {
   color: #999;
-  font-size: 1.1em;
 }
 
 .login .title h1 span {
   color: black;
 }
 
-.login .input {
-  background: #ccc;
-  padding: 0 0 .4em;
-  margin: 0 0 .3em;
-}
-
 .login .input button {
-  letter-spacing: .5em;
+  letter-spacing: 0.5rem;
 }
 
 .login .input button span {
-  left: .2em;
+  left: 0.2rem;
 }
 
 .login .btn li a {
-  margin: .1em auto 0;
+  margin: 0.1rem auto 0;
   display: block;
-  font-size: .5em;
   background: #555;
   color: white;
   width: 90%;
-  height: 1.8em;
-  line-height: 1.8em;
-  letter-spacing: .5em;
+  height: 1.8rem;
+  line-height: 1.8rem;
+  letter-spacing: 0.5rem;
   text-decoration: none;
   cursor: pointer;
 }
 
 .login .btn li a span {
   position: relative;
-  left: .3em;
+  left: 0.3rem;
 }
 
 /*내 페이지 디자인*/
@@ -132,20 +113,18 @@ body,
 
 .my .title {
   background: white;
-  font-size: .5em;
-  padding: 1em 0;
-  width: 18em;
+  padding: 1rem 0;
+  width: 18rem;
   max-width: 95%;
   margin: 0 auto;
 }
 
 .my .aticle .aticle_input {
-  font-size: .3em;
-  margin: 1em auto 0;
-  width: 30em;
+  margin: 1rem auto 0;
+  width: 30rem;
   max-width: 95%;
   background: white;
-  padding: 1em 0 2em;
+  padding: 1rem 0 2rem;
   text-align: center;
 }
 
@@ -154,15 +133,13 @@ body,
 }
 
 .my .aticle .aticle_input select {
-  width: 3em;
-  height: 2em;
-  font-size: .9em;
+  width: 3rem;
+  height: 2rem;
 }
 
 .my .aticle .aticle_input .field input {
-  width: 7em;
-  height: 1.8em;
-  font-size: .9em;
+  width: 7rem;
+  height: 1.8rem;
 }
 
 .my .aticle .aticle_input .edit_btn {
@@ -170,26 +147,24 @@ body,
 }
 
 .my .aticle .aticle_input .edit_btn button {
-  font-size: .8em;
-  padding: .5em 3em;
-  margin: .5em 0 0
+  padding: 0.5rem 3rem;
+  margin: 0.5rem 0 0;
 }
 
 .my .aticle .aticle_input .input_title {
   background: #ccc;
-  padding: .5em 0;
-  margin: 1em auto;
-  width: 30em;
+  padding: 0.5rem 0;
+  margin: 1rem auto;
+  width: 30rem;
   max-width: 90%;
 }
 
 .my .aticle .btn {
-  font-size: .3em;
-  margin: 1em auto 10em;
-  width: 30em;
+  margin: 1rem auto 10rem;
+  width: 30rem;
   max-width: 95%;
   background: white;
-  padding: 1.5em 0;
+  padding: 1.5rem 0;
   text-align: center;
 }
 
@@ -202,91 +177,75 @@ body,
   color: white;
   text-decoration: none;
   width: 90%;
-  padding: 1em 0;
+  padding: 1rem 0;
   display: inline-block;
   text-align: center;
-  margin: .5em auto 0;
-}
-
-/*개발자 디자인*/
-.dev div {
-  font-size: 4em;
-}
-
-.dev ul li {
-  font-size: 2em;
+  margin: 0.5rem auto 0;
 }
 
 /*정렬페이지 디자인*/
 .sort .sort_title {
   background: white;
-  margin: 0 auto .5em;
-  width: 18em;
+  margin: 0 auto 0.5rem;
+  width: 18rem;
   max-width: 95%;
-  padding: 1em 0;
-  font-size: .5em;
+  padding: 1rem 0;
 }
 
 .sort .sort_list {
-  padding: .8em 0;
+  padding: 0.8rem 0;
   background: white;
-  width: 9em;
+  width: 9rem;
   max-width: 95%;
   margin: 0 auto;
   overflow: hidden;
 }
 
 .sort .sort_list .sort_filter {
-  margin: 0 .7em;
-  font-size: .45em;
+  margin: 0 0.7rem;
   text-align: left;
 }
 
 .sort .sort_list .sort_filter li {
   display: inline-block;
-  font-size: .55em;
 }
 
 .sort .sort_list .sort_filter li button {
-  font-size: 1em;
-  margin: 0 0 1em;
-  padding: .5em;
+  margin: 0 0 1rem;
+  padding: 0.5rem;
 }
 
 .sort .sort_list .sort_filter .current {
-  margin: 0 .5em 0 0;
+  margin: 0 0.5rem 0 0;
 }
 
 .sort .sort_list .sort_filter .current input {
-  font-size: 1.4em;
-  width: 1.3em;
-  padding: .2em;
+  width: 1.3rem;
+  padding: 0.2rem;
   text-align: center;
 }
 
 .sort .sort_list .r_cell {
   text-align: left;
-  font-size: .3em;
   width: 88%;
   max-width: 88%;
   margin: 0 auto;
 }
 
 .sort .sort_btn {
-  width: 9em;
+  width: 9rem;
   max-width: 95%;
   margin: 0 auto;
-  padding: 0 0 3em;
+  padding: 0 0 3rem;
 }
 
 .sort .sort_btn button {
   background: black;
   color: white;
   width: 100%;
-  padding: .8em 0;
-  font-size: .5em;
+  padding: 0.8rem 0;
   text-align: center;
-  margin: .3em auto 0;
+  margin: 0.3rem auto 0;
   border: none;
   cursor: pointer;
 }
@@ -294,33 +253,32 @@ body,
 /*그래프 모듈 디자인*/
 .hGraph {
   position: relative;
-  left: 1.5em;
+  left: 1.5rem;
 }
 
 .hGraph ul {
-  margin: 0 3em 0 3em;
-  padding: .1em 0 0 0;
-  border: .1em solid #ccc;
+  margin: 0 3rem 0 3rem;
+  padding: 0.1rem 0 0 0;
+  border: 0.1rem solid #ccc;
   border-top: 0;
   border-right: 0;
-  font-size: .6em;
   font-family: Tahoma, Geneva, sans-serif;
   list-style: none;
 }
 
 .hGraph li {
   position: relative;
-  margin: .8em 0;
+  margin: 0.8rem 0;
   white-space: nowrap;
   vertical-align: top;
 }
 
 .hGraph .gTerm {
   position: absolute;
-  width: 3em;
+  width: 3rem;
   top: 0;
-  left: -5.5em;
-  line-height: 2em;
+  left: -5.5rem;
+  line-height: 2rem;
   text-align: right;
   color: #767676;
   font-weight: bold;
@@ -329,7 +287,7 @@ body,
 .hGraph .gBar {
   position: relative;
   display: inline-block;
-  height: 1.8em;
+  height: 1.8rem;
   border-left: 0;
   background: limegreen;
 }
@@ -340,10 +298,10 @@ body,
 
 .hGraph .gBar span {
   position: absolute;
-  width: 3em;
+  width: 3rem;
   line-height: 20px;
   top: 0;
-  right: -3.8em;
+  right: -3.8rem;
   color: #767676;
 }
 
@@ -355,13 +313,13 @@ body,
 #view_list_div_3 .not_today li {
   background: #bbb;
   display: inline-block;
-  padding: .05em;
-  margin: .2em .1em .2em 0;
+  padding: 0.05rem;
+  margin: 0.2rem 0.1rem 0.2rem 0;
 }
 
 /*로우 데이타 디자인*/
 #view_list_div_2 h6 {
-  margin: 5em 0 0;
+  margin: 5rem 0 0;
   clear: both;
 }
 
@@ -371,31 +329,31 @@ body,
 }
 
 #view_list_div_2 .row_data_title .name {
-  width: 4em;
-  height: 2.7em;
+  width: 4rem;
+  height: 2.7rem;
   text-align: center;
-  line-height: 2.7em;
+  line-height: 2.7rem;
 }
 
 #view_list_div_2 .row_data_title .in,
 #view_list_div_2 .row_data_title .out {
-  width: 10.5em;
+  width: 10.5rem;
 }
 
 #view_list_div_2 .row_data_data {
-  margin: 0 0 .2em;
+  margin: 0 0 0.2rem;
 }
 
 #view_list_div_2 .row_data_data .name {
-  width: 4em;
-  height: 2.7em;
+  width: 4rem;
+  height: 2.7rem;
   text-align: center;
-  line-height: 2.7em;
+  line-height: 2.7rem;
 }
 
 #view_list_div_2 .row_data_data .in,
 #view_list_div_2 .row_data_data .out {
-  width: 10.5em;
+  width: 10.5rem;
   overflow: hidden;
 }
 
@@ -403,7 +361,7 @@ body,
   color: red;
 }
 
-#view_list_div_2 .empty {
+#view_list_div_2 .rempty {
   display: none;
 }
 
@@ -417,14 +375,13 @@ body,
 }
 
 #view_list_div_5 .add_full_time .name {
-  width: 5em;
+  width: 5rem;
 }
 
 #view_list_div_5 .add_full_time .rank {
-  width: 3em;
+  width: 3rem;
 }
 
 #view_list_div_5 .add_full_time .time.err {
-  font-size: .8em;
   color: gray;
 }

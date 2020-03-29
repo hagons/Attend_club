@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import './assets/App.scss';
+// import './assets/App.scss';
 import { router } from './router';
 
 const App = () => {
