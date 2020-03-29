@@ -1,6 +1,6 @@
 import express from 'express';
-import { custumDate } from './lib/getTime';
-import { IpFilter as ipFilter } from 'express-ipfilter';
+import { custumDate } from './lib';
+// import { IpFilter as ipFilter } from 'express-ipfilter';
 import routes from './routes';
 import bodyParser from 'body-parser';
 import multer from 'multer';

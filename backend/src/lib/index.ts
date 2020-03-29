@@ -1,4 +1,5 @@
-type custumAny = number | string;
+import conn from './databases';
+import { custumAny } from '../type';
 
 export const sqlMonth = (month: custumAny): custumAny => {
   const year = new Date().getFullYear();
@@ -19,10 +20,16 @@ export const custumDate = (): custumAny => {
   month = (month < 10 ? '0' : '') + month;
   let day: custumAny = date.getDate();
   day = (day < 10 ? '0' : '') + day;
-  return year + month + day + hour + min + sec;
+  return [year, month, day, hour, min, sec].join('-');
 };
 
-export default {
-  sqlMonth,
-  custumDate
-};
+export const queryWrapper = <T>(query: string, value: string): Promise<T> =>
+  new Promise((resolve, reject) => {
+    conn.query(query, value, (err, res) => {
+      if (err) {
+        reject(err);
+      } else {
+        resolve(res);
+      }
+    });
+  });

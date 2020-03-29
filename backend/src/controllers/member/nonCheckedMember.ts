@@ -1,6 +1,7 @@
-import { custumDate } from './../../lib/getTime';
+import { custumDate } from '../../lib';
 import { RequestHandler } from 'express';
 import conn from '../../lib/databases';
+
 export const nonCheckedMember: RequestHandler = (req, res) => {
   const sql =
     'select name from mac_member where people_id not in (select people_id from mac_list where in_time>curdate() group by people_id) and active=1';

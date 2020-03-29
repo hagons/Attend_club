@@ -1,6 +1,7 @@
-import { sqlMonth, custumDate } from './../lib/getTime';
+import { sqlMonth, custumDate } from '../lib';
 import { RequestHandler } from 'express';
 import conn from '../lib/databases';
+
 export const graph: RequestHandler = (req, res) => {
   const month = req.body.cur_month;
   const time = sqlMonth(month);

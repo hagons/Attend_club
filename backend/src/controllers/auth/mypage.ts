@@ -1,4 +1,4 @@
-import { custumDate } from '../../lib/getTime';
+import { custumDate } from '../../lib';
 import { RequestHandler } from 'express';
 import conn from '../../lib/databases';
 

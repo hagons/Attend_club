@@ -1,4 +1,4 @@
-import { sqlMonth, custumDate } from './../lib/getTime';
+import { sqlMonth, custumDate } from '../lib';
 import { RequestHandler } from 'express';
 import fs from 'fs';
 import conn from '../lib/databases';
