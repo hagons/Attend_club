@@ -1,10 +1,9 @@
 import { custumDate } from '../../lib/getTime';
 import { RequestHandler } from 'express';
-import urlencode from 'urlencode';
 import conn from '../../lib/databases';
 
 export const name: RequestHandler = (req, res) => {
-  const name = urlencode.decode(req.params.name);
+  const name = req.params.name;
   const isexist = 'select people_id from mac_member where name=?';
   const counting =
     'select check_id, out_time from mac_list where in_time > curdate() and ?';

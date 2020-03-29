@@ -3,18 +3,8 @@ import { RequestHandler } from 'express';
 import conn from '../../lib/databases';
 
 export const attendUpdate: RequestHandler = (req, res) => {
-  const checkId = req.body.check_id;
-  const peopleId = req.body.people_id;
-  const name = req.body.name;
-  const ymd = req.body.ymd;
-
-  const inHour = req.body.in_hour;
-  const inMin = req.body.in_min;
-  const inCo = req.body.in_co;
-  const outHour = req.body.out_hour;
-  const outMin = req.body.out_min;
-  const outCo = req.body.out_co;
-  const night = req.body.night;
+  const { checkId, peopleId, name, ymd } = req.body;
+  const { inHour, inMin, inCo, outHour, outMin, outCo, night } = req.body;
 
   let hour;
   let min;

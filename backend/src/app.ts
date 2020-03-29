@@ -1,12 +1,17 @@
 import express from 'express';
 import { custumDate } from './lib/getTime';
 import { IpFilter as ipFilter } from 'express-ipfilter';
-import bodyParser from 'body-parser';
 import routes from './routes';
+import bodyParser from 'body-parser';
+import multer from 'multer';
 
 const app = express();
-app.use(express.static('public'));
+const upload = multer();
+
+app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.static('public'));
+app.use(upload.none());
 // app.use(
 //   // console.log(req.connection.remoteAddress);
 //   ipFilter(['::ffff:192.168.0.2', '::1', '::ffff:127.0.0.1'], {
